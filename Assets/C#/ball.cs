@@ -28,4 +28,11 @@ public class ball : MonoBehaviour
     {
         _rb.AddForce(_turnControl * _turnSpeed);
     }
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.layer == 6)
+        {
+            //Destroy(this.gameObject);
+            Debug.Log("there was a collision");
+        }
+    }
 }

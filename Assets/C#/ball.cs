@@ -7,6 +7,7 @@ public class ball : MonoBehaviour
     public float _Speed;
     public float _turnSpeed;
     private Rigidbody _rb;
+    public bool dead;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();

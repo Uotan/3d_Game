@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AninationPlayer : MonoBehaviour
+public class AnimationUp_Down : MonoBehaviour
 {
     public AnimationClip [] _Clips;
     Animator _animator;

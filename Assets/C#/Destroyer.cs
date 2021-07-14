@@ -5,26 +5,28 @@ using UnityEngine;
 public class Destroyer : MonoBehaviour
 {
     public bool _collisioned;
-    private void OnCollisionExit(Collision other) {
-        if (other.gameObject.tag=="Player")
-        {
-             _collisioned = false;
-            StartCoroutine("DoCheck");
-        }
-    }
-    private void OnCollisionStay(Collision other) {
-        if (other.gameObject.tag=="Player")
-        {
-            _collisioned = true;
-        }
-    }
-    IEnumerator DoCheck() 
+    //Удалить родительский объект т.е. всю дорожку с препятствиями
+    public forRoad _parrentGOscript;
+    public float waittime = 10f;
+    private void OnTriggerStay(Collider other)
     {
-        yield return new WaitForSeconds(20f);
-        if (_collisioned==false)
+        if (other.gameObject.tag == "playerCollider")
         {
-            Destroy(this.gameObject);
+            _parrentGOscript._playerontheroad = true;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "playerCollider")
+        {
+            _parrentGOscript._playerontheroad = false;
+            Invoke("Check", waittime);
+        }
+    }
+    void Check()
+    {
+        _parrentGOscript.CheckCollisions();
+    }
+
 }
 

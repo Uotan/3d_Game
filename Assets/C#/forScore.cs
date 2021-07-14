@@ -10,9 +10,12 @@ public class forScore : MonoBehaviour
     public ball _playerscript;
     float _score;
 
-    private void FixedUpdate() {
-        //_score+= (Time.deltaTime * 2);
-        _score+= Time.deltaTime;
-        _scoretext.text = Mathf.Round(_score).ToString();
+    //private void FixedUpdate() {
+    //    _score+= Time.deltaTime;
+    //    _scoretext.text = Mathf.Round(_score).ToString();
+    //}
+    private void Update()
+    {
+        _scoretext.text = Mathf.Round((_playerscript.transform.position.z-_playerscript._startPos.z)/5).ToString();
     }
 }

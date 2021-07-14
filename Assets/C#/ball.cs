@@ -8,9 +8,11 @@ public class ball : MonoBehaviour
     public float _turnSpeed;
     private Rigidbody _rb;
     public bool dead;
+    public Vector3 _startPos;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _startPos = this.gameObject.transform.position;
     }
 
     // Update is called once per frame

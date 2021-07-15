@@ -16,6 +16,6 @@ public class forScore : MonoBehaviour
     //}
     private void Update()
     {
-        _scoretext.text = Mathf.Round((_playerscript.transform.position.z-_playerscript._startPos.z)/5).ToString();
+        _scoretext.text = Mathf.Round((_playerscript.transform.position.z-_playerscript._startPos.z)/10).ToString();
     }
 }

@@ -201,16 +201,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _iscanberandom: 0
+  _srartAnima: 0
+  _ispair: 0
   _Clips:
   - {fileID: 7400000, guid: 872193e9880f0d9408ebd2af7b615da8, type: 2}
   - {fileID: 7400000, guid: e7950f65328fb0f46925b98f5ead8cef, type: 2}
   _animator: {fileID: 7223702366231402144}
   _clipindex: 0
-  _ispair: 0
-  _ismain: 0
   _pairobjects:
   - {fileID: 0}
   - {fileID: 0}
+  _uniqueAnima: 
 --- !u!1 &3395323988153546607
 GameObject:
   m_ObjectHideFlags: 0

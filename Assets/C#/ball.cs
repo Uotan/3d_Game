@@ -6,6 +6,7 @@ public class ball : MonoBehaviour
 {
     public float _Speed;
     public float _turnSpeed;
+    public float _impuseForce;
     private Rigidbody _rb;
     public bool dead;
     public Vector3 _startPos;
@@ -35,6 +36,21 @@ public class ball : MonoBehaviour
         {
             //Destroy(this.gameObject);
             Debug.Log("there was a collision");
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag=="speed_plus")
+        {
+            _Speed = 20;
+        }
+        if (other.tag== "speed_minus")
+        {
+            _Speed = 15;
+        }
+        if (other.tag=="booster")
+        {
+            _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
         }
     }
 }

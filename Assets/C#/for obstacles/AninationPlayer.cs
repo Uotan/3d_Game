@@ -14,7 +14,6 @@ public class AninationPlayer : MonoBehaviour
     //[AddComponentMenu("Для парных препятствий")]
     //[Header("Если объектов несколько")]
 
-
     [Tooltip("выбери парные объекты, первым должен быть главный объект")]
     public AninationPlayer[] _pairobjects;
 

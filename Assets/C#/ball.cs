@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ball : MonoBehaviour
 {
     public float _Speed;
+    public float _speep_increment;
     public float _turnSpeed;
     public float _impuseForce;
     private Rigidbody _rb;
@@ -22,6 +24,10 @@ public class ball : MonoBehaviour
         float _moveHorizontal = Input.GetAxis("Horizontal");
         Vector3 _movement = new Vector3(_moveHorizontal, 0f, 0f);
         turn(_movement);
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     private void FixedUpdate()
     {
@@ -42,11 +48,11 @@ public class ball : MonoBehaviour
     {
         if (other.tag=="speed_plus")
         {
-            _Speed = 20;
+            _Speed += _speep_increment;
         }
         if (other.tag== "speed_minus")
         {
-            _Speed = 15;
+            _Speed -= _speep_increment;
         }
         if (other.tag=="booster")
         {

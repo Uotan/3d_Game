@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Speed: 15
+  _speep_increment: 3
   _turnSpeed: 15
+  _impuseForce: 15
   dead: 0
   _startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1052824715655375455

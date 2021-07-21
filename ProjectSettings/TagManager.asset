@@ -9,6 +9,7 @@ TagManager:
   - decreaser
   - speed_plus
   - speed_minus
+  - boost_up
   layers:
   - Default
   - TransparentFX

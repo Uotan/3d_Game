@@ -9,6 +9,7 @@ public class ball : MonoBehaviour
     public float _speep_increment;
     public float _turnSpeed;
     public float _impuseForce;
+    public float _impuseForceUP;
     private Rigidbody _rb;
     public bool dead;
     public Vector3 _startPos;
@@ -46,17 +47,25 @@ public class ball : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="speed_plus")
+        //if (other.tag=="speed_plus")
+        //{
+        //    _Speed += _speep_increment;
+        //}
+        //if (other.tag== "speed_minus")
+        //{
+        //    _Speed -= _speep_increment;
+        //}
+        //if (other.tag=="booster")
+        //{
+        //    _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
+        //}
+        switch (other.tag)
         {
-            _Speed += _speep_increment;
-        }
-        if (other.tag== "speed_minus")
-        {
-            _Speed -= _speep_increment;
-        }
-        if (other.tag=="booster")
-        {
-            _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
+            case "speed_plus": _Speed += _speep_increment; break;
+            case "speed_minus": _Speed -= _speep_increment; break;
+            case "booster": _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse); break;
+            case "boost_up": _rb.AddForce(Vector3.up * _impuseForceUP, ForceMode.Impulse); break;
+            default: break;
         }
     }
 }

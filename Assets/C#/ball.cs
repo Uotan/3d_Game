@@ -27,7 +27,11 @@ public class ball : MonoBehaviour
         turn(_movement);
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            SceneManager.LoadScene(0);
+            Application.Quit();
+        }
+        if (Input.GetKeyUp(KeyCode.B))
+        {
+            _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
         }
     }
     private void FixedUpdate()

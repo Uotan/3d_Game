@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Speed: 15
   _speep_increment: 2
-  _turnSpeed: 15
+  _turnSpeed: 5
   _impuseForce: 15
   _impuseForceUP: 130
   dead: 0

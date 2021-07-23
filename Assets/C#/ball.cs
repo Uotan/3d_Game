@@ -27,7 +27,8 @@ public class ball : MonoBehaviour
         turn(_movement);
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
+            //Application.Quit();
         }
         if (Input.GetKeyUp(KeyCode.B))
         {
@@ -65,8 +66,8 @@ public class ball : MonoBehaviour
         //}
         switch (other.tag)
         {
-            case "speed_plus": _Speed += _speep_increment; break;
-            case "speed_minus": _Speed -= _speep_increment; break;
+            case "speed_plus": _Speed += _speep_increment; _turnSpeed+= _speep_increment; break;
+            case "speed_minus": _Speed -= _speep_increment;_turnSpeed-= _speep_increment; break;
             case "booster": _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse); break;
             case "boost_up": _rb.AddForce(Vector3.up * _impuseForceUP, ForceMode.Impulse); break;
             default: break;

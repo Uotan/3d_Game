@@ -13,7 +13,7 @@ public class forRoad : MonoBehaviour
         int _prefabNumb = Random.Range(0, prefabs.Length);
         if (_playerontheroad == false)
         {
-            Instantiate(prefabs[_prefabNumb], new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z+300f), Quaternion.identity);
+            Instantiate(prefabs[_prefabNumb], new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z+450f), Quaternion.identity);
             Destroy(this.gameObject);
         }
         

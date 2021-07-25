@@ -47,29 +47,19 @@ public class ball : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             //Destroy(this.gameObject);
-            Debug.Log("there was a collision");
+            SceneManager.LoadScene(0);
+            //Debug.Log("there was a collision");
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.tag=="speed_plus")
-        //{
-        //    _Speed += _speep_increment;
-        //}
-        //if (other.tag== "speed_minus")
-        //{
-        //    _Speed -= _speep_increment;
-        //}
-        //if (other.tag=="booster")
-        //{
-        //    _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
-        //}
         switch (other.tag)
         {
             case "speed_plus": _Speed += _speep_increment; _turnSpeed+= _speep_increment; break;
             case "speed_minus": _Speed -= _speep_increment;_turnSpeed-= _speep_increment; break;
             case "booster": _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse); break;
             case "boost_up": _rb.AddForce(Vector3.up * _impuseForceUP, ForceMode.Impulse); break;
+            case "deletezone": SceneManager.LoadScene(0); break;
             default: break;
         }
     }

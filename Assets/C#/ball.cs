@@ -10,9 +10,11 @@ public class ball : MonoBehaviour
     public float _turnSpeed;
     public float _impuseForce;
     public float _impuseForceUP;
+
     private Rigidbody _rb;
-    public bool dead;
+    public bool _canbedead = true;
     public Vector3 _startPos;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -44,7 +46,7 @@ public class ball : MonoBehaviour
         _rb.AddForce(_turnControl * _turnSpeed);
     }
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.layer == 6&&_canbedead==true)
         {
             //Destroy(this.gameObject);
             SceneManager.LoadScene(0);

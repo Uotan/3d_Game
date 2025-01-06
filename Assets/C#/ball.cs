@@ -21,8 +21,7 @@ public class ball : MonoBehaviour
         _startPos = this.gameObject.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         float _moveHorizontal = Input.GetAxis("Horizontal");
         Vector3 _movement = new Vector3(_moveHorizontal, 0f, 0f);
@@ -36,9 +35,7 @@ public class ball : MonoBehaviour
         {
             _rb.AddForce(Vector3.forward * _impuseForce, ForceMode.Impulse);
         }
-    }
-    private void FixedUpdate()
-    {
+
         _rb.AddForce(Vector3.forward*_Speed);
     }
     void turn(Vector3 _turnControl)
